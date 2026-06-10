@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Corte alle Ferrazze - Osteria tradizionale a Scimmia, San Martino Buon Albergo (VR). Cucina veneta autentica, pesce, pizza artigianale e carne alla griglia.">
+    <meta name="keywords" content="osteria Verona, ristorante San Martino Buon Albergo, cucina veneta, pizza artigianale, pesce fresco">
+    <meta name="author" content="Corte alle Ferrazze">
+    <title>Corte alle Ferrazze | Osteria Tradizionale Veneta - Scimmia, Verona</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'terracotta': '#B5543A',
+                        'terracotta-dark': '#8B3A2A',
+                        'cream': '#FFF8F0',
+                        'cream-dark': '#F5E6D3',
+                        'olive': '#4A5D3A',
+                        'olive-dark': '#3A4A2E',
+                        'charcoal': '#2C2C2C',
+                        'gold': '#C8944A'
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+                        'sans': ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles for enhanced typography and animations */
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Lora', serif; }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(44,44,44,0.7) 0%, rgba(139,58,42,0.5) 100%);
+        }
+
+        .scroll-smooth { scroll-behavior: smooth; }
+
+        /* Subtle hover animation for cards */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Decorative divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #B5543A, transparent);
+        }
+    </style>
+</head>
+
+<body class="bg-cream font-body text-charcoal scroll-smooth">
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="fixed top-0 w-full bg-charcoal/95 backdrop-blur-sm z-50 shadow-lg" aria-label="Navigazione principale">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#hero" class="font-display text-2xl font-bold text-cream hover:text-gold transition-colors">
+                    Corte alle Ferrazze
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servizi" class="text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">I Nostri Piatti</a>
+                    <a href="#storia" class="text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">La Nostra Storia</a>
+                    <a href="#recensioni" class="text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">Recensioni</a>
+                    <a href="#contatti" class="bg-terracotta text-cream px-5 py-2 rounded-full hover:bg-terracotta-dark transition-colors text-sm uppercase tracking-wider font-semibold">
+                        Prenota
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-cream" aria-label="Apri menu di navigazione" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <a href="#servizi" class="block py-2 text-cream/80 hover:text-gold">I Nostri Piatti</a>
+                <a href="#storia" class="block py-2 text-cream/80 hover:text-gold">La Nostra Storia</a>
+                <a href="#recensioni" class="block py-2 text-cream/80 hover:text-gold">Recensioni</a>
+                <a href="#contatti" class="block py-2 text-cream/80 hover:text-gold">Contatti</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image (placeholder - replace URL) -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80"
+                 alt="Interno accogliente dell'osteria Corte alle Ferrazze con tavoli apparecchiati e atmosfera calda"
+                 class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+            <!-- Badge -->
+            <span class="inline-block bg-gold/20 border border-gold/50 text-cream px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-6">
+                ⭐ 4.8/5 — Osteria Tradizionale Veneta
+            </span>
+
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-8xl font-bold text-cream mb-6 leading-tight">
+                Corte alle<br>Ferrazze
+            </h1>
+
+            <p class="text-xl sm:text-2xl text-cream/90 font-light max-w-2xl mx-auto mb-4">
+                Dove la tradizione veneta incontra il gusto autentico
+            </p>
+
+            <p class="text-base text-cream/70 max-w-xl mx-auto mb-10">
+                Cucina veneta, specialità di pesce, pizza artigianale e carne alla griglia nel cuore di Scimmia, a pochi passi da Verona.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contatti" class="bg-terracotta text-cream px-8 py-4 rounded-full text-lg font-semibold hover:bg-terracotta-dark transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+                    🍽️ Prenota il Tuo Tavolo
+                </a>
+                <a href="#servizi" class="border-2 border-cream/50 text-cream px-8 py-4 rounded-full text-lg font-semibold hover:bg-cream/10 transition-all">
+                    Scopri il Menu
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-cream/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ========== SERVIZI / I NOSTRI PIATTI ========== -->
+    <section id="servizi" class="py-20 lg:py-28 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-terracotta uppercase tracking-widest text-sm font-semibold">Cosa Offriamo</span>
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal mt-3 mb-6">
+                    I Nostri Piatti
+                </h2>
+                <div class="divider max-w-xs mx-auto mb-6">
+                    <span class="text-2xl">🍷</span>
+                </div>
+                <p class="text-lg text-charcoal/70 max-w-2xl mx-auto">
+                    Ingredienti freschi, qualità senza compromessi e ricette tramandate con passione.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Pesce -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=600&q=80"
+                             alt="Piatto di pesce fresco con crostacei e pesce del Mediterraneo"
+                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-3xl">🐟</span>
+                            <h3 class="font-display text-2xl font-bold text-charcoal">Specialità di Pesce</h3>
+                        </div>
+                        <p class="text-charcoal/70 leading-relaxed">
+                            Il mare nel piatto: antipasti crudi e cotti, primi di pasta fresca con pesce del giorno e secondi alla griglia. Freschezza garantita ogni giorno.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pizza -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80"
+                             alt="Pizza artigianale con pomodoro San Marzano e mozzarella di bufala"
+                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-3xl">🍕</span>
+                            <h3 class="font-display text-2xl font-bold text-charcoal">Pizza Artigianale</h3>
+                        </div>
+                        <p class="text-charcoal/70 leading-relaxed">
+                            Impasto a lunga lievitazione, ingredienti DOP e forno a legna. Ogni pizza è un'opera d'arte che celebra la tradizione italiana.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Carne -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80"
+                             alt="Carne alla griglia selezionata con contorno di verdure di stagione"
+                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-3xl">🥩</span>
+                            <h3 class="font-display text-2xl font-bold text-charcoal">Carne alla Griglia d'Autore</h3>
+                        </div>
+                        <p class="text-charcoal/70 leading-relaxed">
+                            Selezioni pregiate cotte alla brace con maestria. Tagliata, costata e specialità della casa accompagnate da verdure di stagione.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Primi Tradizionali -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80"
+                             alt="Pasta fresca fatta in casa con ragù tradizionale"
+                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-3xl">🍝</span>
+                            <h3 class="font-display text-2xl font-bold text-charcoal">Primi Tradizionali</h3>
+                        </div>
+                        <p class="text-charcoal/70 leading-relaxed">
+                            Pasta fresca fatta in casa ogni giorno: bigoli al ragù di cortile, lasagne alla bolognese e risotti mantecati alla perfezione.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Eventi e Cerimonie -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&q=80"
+                             alt="Sala del ristorante apparecchiata per un evento speciale con luci calde"
+                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-3xl">🎉</span>
+                            <h3 class="font-display text-2xl font-bold text-charcoal">Eventi & Cerimonie</h3>
+                        </div>
+                        <p class="text-charcoal/70 leading-relaxed">
+                            L'atmosfera perfetta per pranzi di lavoro, cene romantiche, feste private e cerimonie. Menu personalizzati per ogni occasione.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Cantina -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&q=80"
+                             alt="Selezione di vini italiani rossi e bianchi in cantina"
+                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-3xl">🍷</span>
+                            <h3 class="font-display text-2xl font-bold text-charcoal">Cantina Selezionata</h3>
+                        </div>
+                        <p class="text-charcoal/70 leading-relaxed">
+                            Una carta vini curata con etichette locali della Valpolicella, Amarone, e selezioni nazionali per accompagnare ogni piatto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STORIA / ABOUT ========== -->
+    <section id="storia" class="py-20 lg:py-28 bg-cream-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Image -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1555396273-367a4eb4db5?w=800&q=80"
+                         alt="Chef che prepara piatti tradizionali nella cucina dell'osteria"
+                         class="rounded-2xl shadow-2xl w-full h-[500px] object-cover">
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-terracotta text-cream p-6 rounded-2xl shadow-xl hidden sm:block">
+                        <p class="font-display text-3xl font-bold">4.8</p>
+                        <p class="text-sm">su 5 ⭐</p>
+                        <p class="text-xs opacity-80">Google Reviews</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div>
+                    <span class="text-terracotta uppercase tracking-widest text-sm font-semibold">La Nostra Storia</span>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold text-charcoal mt-3 mb-6">
+                        Tradizione e Passione dal Cuore del Veneto
+                    </h2>
+                    <p class="text-lg text-charcoal/70 leading-relaxed mb-6">
+                        Nel suggestivo borgo di Scimmia, a pochi chilometri da Verona, <strong>Corte alle Ferrazze</strong> è un luogo dove la tradizione veneta incontra il gusto autentico. La nostra osteria affonda le radici nelle antiche tradizioni culinarie della campagna veronese.
+                    </p>
+                    <p class="text-lg text-charcoal/70 leading-relaxed mb-8">
+                        Ogni piatto racconta una storia: ingredienti locali, ricette tramandate di generazione in generazione e la passione che mettiamo in ogni dettaglio, dall'impasto della pizza alla selezione del pesce più fresco.
+                    </p>
+
+                    <!-- Features -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 bg-olive/10 rounded-full flex items-center justify-center text-olive text-lg">✓</span>
+                            <span class="text-charcoal font-medium">Ingredienti freschi e locali</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 bg-olive/10 rounded-full flex items-center justify-center text-olive text-lg">✓</span>
+                            <span class="text-charcoal font-medium">Cucina veneta tradizionale</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 bg-olive/10 rounded-full flex items-center justify-center text-olive text-lg">✓</span>
+                            <span class="text-charcoal font-medium">Forno a legna</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 bg-olive/10 rounded-full flex items-center justify-center text-olive text-lg">✓</span>
+                            <span class="text-charcoal font-medium">Ambiente accogliente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RECENSIONI ========== -->
+    <section id="recensioni" class="py-20 lg:py-28 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-gold uppercase tracking-widest text-sm font-semibold">Dicono di Noi</span>
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-cream mt-3 mb-6">
+                    Le Voci dei Nostri Ospiti
+                </h2>
+                <div class="divider max-w-xs mx-auto mb-6">
+                    <span class="text-2xl">💬</span>
+                </div>
+                <p class="text-lg text-cream/70 max-w-2xl mx-auto mb-4">
+                    Oltre <strong class="text-gold">500 recensioni</strong> con una valutazione media di <strong class="text-gold">4.8/5</strong>
+                </p>
+                <a href="https://maps.app.goo.gl/KArZtj4zjLwosnBZ6" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   title="Apri le recensioni di Corte alle Ferrazze su Google Maps in una nuova scheda"
+                   aria-label="Leggi le recensioni dei clienti su Google (si apre in una nuova scheda)"
+                   class="inline-block text-gold hover:text-cream transition-colors text-base underline decoration-dotted underline-offset-4">
+                    📖 Leggi tutte le recensioni su Google
+                </a>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-charcoal border border-cream/10 rounded-2xl p-8 card-hover">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                    </div>
+                    <blockquote class="text-cream/80 leading-relaxed mb-6 italic">
+                        "Un'esperienza indimenticabile! Il pesce era freschissimo e la pizza assolutamente straordinaria. L'atmosfera è calda e accogliente, il servizio impeccabile. Torneremo sicuramente!"
+                    </blockquote>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center text-cream font-bold text-lg">
+                            M
+                        </div>
+                        <div>
+                            <p class="font-semibold text-cream">Marco B.</p>
+                            <p class="text-sm text-cream/50">Recensione Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-charcoal border border-cream/10 rounded-2xl p-8 card-hover">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                    </div>
+                    <blockquote class="text-cream/80 leading-relaxed mb-6 italic">
+                        "Abbiamo festeggiato il nostro anniversario qui. Location splendida, carne alla griglia cotta alla perfezione e il personale ci ha fatto sentire come a casa. Consigliatissimo!"
+                    </blockquote>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-olive rounded-full flex items-center justify-center text-cream font-bold text-lg">
+                            L
+                        </div>
+                        <div>
+                            <p class="font-semibold text-cream">Laura e Giovanni</p>
+                            <p class="text-sm text-cream/50">Recensione Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-charcoal border border-cream/10 rounded-2xl p-8 card-hover">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                        <span class="text-gold text-xl">★</span>
+                    </div>
+                    <blockquote class="text-cream/80 leading-relaxed mb-6 italic">
+                        "Pranzo di lavoro perfetto. Ambiente elegante ma non pretenzioso, primi piatti generosi e saporiti. La carta vini è davvero interessante. Ottimo rapporto qualità-prezzo."
+                    </blockquote>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-charcoal font-bold text-lg">
+                            A
+                        </div>
+                        <div>
+                            <p class="font-semibold text-cream">Alessandro R.</p>
+                            <p class="text-sm text-cream/50">Recensione Google</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTATTI & FORM ========== -->
+    <section id="contatti" class="py-20 lg:py-28 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-terracotta uppercase tracking-widest text-sm font-semibold">Contattaci</span>
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal mt-3 mb-6">
+                    Prenota il Tuo Tavolo
+                </h2>
+                <div class="divider max-w-xs mx-auto mb-6">
+                    <span class="text-2xl">📍</span>
+                </div>
+                <p class="text-lg text-charcoal/70 max-w-2xl mx-auto">
+                    Ti aspettiamo per farti vivere un'esperienza culinaria unica nel cuore della campagna veronese.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Address -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-terracotta/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">📍</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-charcoal mb-1">Dove Siamo</h3>
+                            <p class="text-charcoal/70">
+                                Via Scimmia, 4<br>
+                                37036 Scimmia — San Martino Buon Albergo (VR)
+                            </p>
+                            <a href="https://maps.app.goo.gl/h3jWvzNRPc3dV8t69" target="_blank" rel="noopener noreferrer"
+                               class="text-terracotta font-semibold hover:text-terracotta-dark transition-colors inline-flex items-center gap-1 mt-2">
+                                Apri in Google Maps
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-terracotta/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">📞</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-charcoal mb-1">Telefono</h3>
+                            <a href="tel:+390455708484" class="text-charcoal/70 hover:text-terracotta transition-colors text-lg">
+                                +39 045 570 8484
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-terracotta/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">🕐</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-charcoal mb-1">Orari di Apertura</h3>
+                            <div class="text-charcoal/70 space-y-1">
+                                <p class="flex justify-between max-w-xs">
+                                    <span>Martedì — Domenica</span>
+                                    <span class="font-medium">12:00 – 15:00</span>
+                                </p>
+                                <p class="flex justify-between max-w-xs">
+                                    <span></span>
+                                    <span class="font-medium">19:00 – 23:00</span>
+                                </p>
+                                <p class="flex justify-between max-w-xs text-terracotta font-semibold">
+                                    <span>Lunedì</span>
+                                    <span>Chiuso</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Embed (placeholder) -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg h-64 bg-cream-dark">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.5!2d11.0823818!3d45.4329982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5d88c257e92b%3A0xa4796b8efe304343!2sCORTE%20ALLE%20FERRAZZE!5e0!3m2!1sit!2sit!4v1"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mappa di Corte alle Ferrazze a Scimmia, Verona"
+                            aria-label="Mappa interattiva con la posizione del ristorante Corte alle Ferrazze">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
+                    <h3 class="font-display text-2xl font-bold text-charcoal mb-2">Inviaci un Messaggio</h3>
+                    <p class="text-charcoal/60 mb-8">Compila il modulo per prenotare o richiedere informazioni. Ti risponderemo entro poche ore.</p>
+
+                    <form action="#" method="POST" class="space-y-6" aria-label="Modulo di prenotazione">
+                        <!-- Name -->
+                        <div>
+                            <label for="nome" class="block text-sm font-semibold text-charcoal mb-2">
+                                Nome e Cognome *
+                            </label>
+                            <input type="text" id="nome" name="nome" required
+                                   placeholder="Es. Mario Rossi"
+                                   class="w-full px-4 py-3 rounded-xl border border-charcoal/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all bg-cream/50"
+                                   aria-required="true">
+                        </div>
+
+                        <!-- Email & Phone -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-charcoal mb-2">
+                                    Email *
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                       placeholder="mario@email.it"
+                                       class="w-full px-4 py-3 rounded-xl border border-charcoal/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all bg-cream/50"
+                                       aria-required="true">
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-sm font-semibold text-charcoal mb-2">
+                                    Telefono
+                                </label>
+                                <input type="tel" id="telefono" name="telefono"
+                                       placeholder="+39 333 1234567"
+                                       class="w-full px-4 py-3 rounded-xl border border-charcoal/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all bg-cream/50">
+                            </div>
+                        </div>
+
+                        <!-- Date & Guests -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="data" class="block text-sm font-semibold text-charcoal mb-2">
+                                    Data Prenotazione
+                                </label>
+                                <input type="date" id="data" name="data"
+                                       class="w-full px-4 py-3 rounded-xl border border-charcoal/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all bg-cream/50">
+                            </div>
+                            <div>
+                                <label for="ospiti" class="block text-sm font-semibold text-charcoal mb-2">
+                                    Numero Ospiti
+                                </label>
+                                <select id="ospiti" name="ospiti"
+                                        class="w-full px-4 py-3 rounded-xl border border-charcoal/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all bg-cream/50">
+                                    <option value="">Seleziona</option>
+                                    <option value="1">1 persona</option>
+                                    <option value="2">2 persone</option>
+                                    <option value="3">3 persone</option>
+                                    <option value="4">4 persone</option>
+                                    <option value="5">5 persone</option>
+                                    <option value="6">6 persone</option>
+                                    <option value="7+">7+ persone</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="messaggio" class="block text-sm font-semibold text-charcoal mb-2">
+                                Messaggio / Richieste Speciali
+                            </label>
+                            <textarea id="messaggio" name="messaggio" rows="4"
+                                      placeholder="Allergie, preferenze, occasioni speciali..."
+                                      class="w-full px-4 py-3 rounded-xl border border-charcoal/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all bg-cream/50 resize-none"></textarea>
+                        </div>
+
+                        <!-- Privacy -->
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="privacy" name="privacy" required
+                                   class="mt-1 w-5 h-5 rounded border-charcoal/30 text-terracotta focus:ring-terracotta">
+                            <label for="privacy" class="text-sm text-charcoal/60">
+                                Acconsento al trattamento dei miei dati personali ai sensi del GDPR (Reg. UE 2016/679) *
+                            </label>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit"
+                                class="w-full bg-terracotta text-cream py-4 rounded-xl font-semibold text-lg hover:bg-terracotta-dark transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]">
+                            🍽️ Invia Richiesta di Prenotazione
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-charcoal text-cream py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-cream">Corte alle Ferrazze</h3>
+                    <p class="text-cream/60 leading-relaxed">
+                        Osteria tradizionale nel cuore di Scimmia, a due passi da Verona. Dove la tradizione veneta incontra il gusto autentico.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-gold uppercase tracking-wider text-sm mb-4">Link Rapidi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#servizi" class="text-cream/60 hover:text-cream transition-colors">I Nostri Piatti</a></li>
+                        <li><a href="#storia" class="text-cream/60 hover:text-cream transition-colors">La Nostra Storia</a></li>
+                        <li><a href="#recensioni" class="text-cream/60 hover:text-cream transition-colors">Recensioni</a></li>
+                        <li><a href="#contatti" class="text-cream/60 hover:text-cream transition-colors">Prenota</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold text-gold uppercase tracking-wider text-sm mb-4">Contatti</h4>
+                    <ul class="space-y-2 text-cream/60">
+                        <li>📍 Via Scimmia, 4 — 37036 Scimmia (VR)</li>
+                        <li>📞 <a href="tel:+390455708484" class="hover:text-cream transition-colors">+39 045 570 8484</a></li>
+                        <li>✉️ info@cortealleferrazze.it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-cream/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-cream/40 text-sm">
+                    © 2026 Corte alle Ferrazze — Tutti i diritti riservati. P.IVA: XXXXXXXXXXX
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-cream/40 hover:text-cream transition-colors" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="text-cream/40 hover:text-cream transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BACK TO TOP BUTTON ========== -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="fixed bottom-6 right-6 w-12 h-12 bg-terracotta text-cream rounded-full shadow-lg hover:bg-terracotta-dark transition-all flex items-center justify-center z-40"
+            aria-label="Torna in cima alla pagina">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+</body>
+</html>
