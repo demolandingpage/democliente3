@@ -1,1 +1,20 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
 
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# File temporanei
+*.tmp
+*.bak
+*.swp
+
+# Node (se userai tool di build in futuro)
+node_modules/
+package-lock.json
+npm-debug.log
